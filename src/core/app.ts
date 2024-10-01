@@ -3,8 +3,11 @@ import morgan from "morgan";
 import cors from "cors";
 
 import { ApiError, globalErrorHandler } from "../shared";
+import { dbConnection } from "../config";
+import { router } from "../modules";
 
 const app: express.Application = express();
+dbConnection();
 
 app.use(cors());
 app.options("*", cors());
@@ -20,6 +23,8 @@ if (process.env.NODE_ENV === "development") {
 app.get("/", (req: express.Request, res: express.Response) => {
     res.send("Educational Platform API");
 });
+
+router(app);
 
 app.use(
     "*",
