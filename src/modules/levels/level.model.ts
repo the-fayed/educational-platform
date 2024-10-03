@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
 import { ILevel } from "./level.interfaces";
+import { NextFunction } from "express";
 
 export const Level = new mongoose.Schema(
     {
@@ -15,7 +16,7 @@ export const Level = new mongoose.Schema(
     { timestamps: true }
 );
 
-Level.pre("save", function (next): void {
+Level.pre("save", function (next: NextFunction): void {
     this.set(
         "name",
         this.get("name").charAt(0).toUpperCase() + this.get("name").slice(1)
