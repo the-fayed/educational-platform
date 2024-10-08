@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-import { ILevel } from "./level.interfaces";
+import { ILevel } from "./level.interface";
 import { NextFunction } from "express";
 
 export const Level = new mongoose.Schema(

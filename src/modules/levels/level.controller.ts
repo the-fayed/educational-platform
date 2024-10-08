@@ -5,7 +5,7 @@ import {
     DeleteLevelDto,
     UpdateLevelDto,
     GetLevelDto,
-} from "./level.interfaces";
+} from "./level.interface";
 import { LevelService } from "./level.service";
 import { ApiError } from "../../shared";
 
